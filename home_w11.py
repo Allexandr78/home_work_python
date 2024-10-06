@@ -1,14 +1,18 @@
 class Phone:
+    """ Телефон класс """
     number = "123"
     _calls = 0
 
-    def input_number(self, number):
+    def input_number(self, number) -> None:
+        """ Ввод номера """
         self.number = number
 
-    def output(self):
+    def output(self) -> int:
+        """ Вывод количества звонков """
         return self._calls
 
-    def add_call(self):
+    def add_call(self) -> None:
+        """ Добавление звонка """
         self._calls += 1
 
 
@@ -37,4 +41,4 @@ def num_of_calls(phones: list[Phone]) -> int:
     return sum([phone.output() for phone in phones])
 
 
-print(num_of_calls([one, two, three]))
+print(num_of_calls([one, two, three]))  # 9
