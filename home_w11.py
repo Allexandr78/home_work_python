@@ -99,7 +99,7 @@ class Knight(Chess_piece):
         if (abs(new_x - x), abs(new_y - y)) in ((1, 2), (2, 1)):
             return self._is_on_board(new_position)
         return False
-    
+
 
 class Bishop(Chess_piece):
     """Слон"""
@@ -112,7 +112,7 @@ class Bishop(Chess_piece):
         if abs(new_x - x) == abs(new_y - y):
             return self._is_on_board(new_position)
         return False
-    
+
 
 class Rook(Chess_piece):
     """Ладья"""
@@ -125,7 +125,7 @@ class Rook(Chess_piece):
         if new_x == x or new_y == y:
             return self._is_on_board(new_position)
         return False
-    
+
 
 class Queen(Chess_piece):
     """Ферзь"""
@@ -138,7 +138,7 @@ class Queen(Chess_piece):
         if abs(new_x - x) == abs(new_y - y) or new_x == x or new_y == y:
             return self._is_on_board(new_position)
         return False
-    
+
 
 class King(Chess_piece):
     """Король"""
@@ -181,3 +181,40 @@ for piece in movable_pieces:
         f"{piece.__class__.__name__} на {piece.position} "
         f"может двигаться к {piece.position}."
         )
+
+
+class Student:
+    """Студент"""
+
+    def __init__(self, name: str, age: int, grades: list) -> None:
+        """Инициализация"""
+        self.name = name         
+        self.age = age           
+        self.grades = grades     
+
+    def __repr__(self: "Student") -> str:
+        """Возвращает строковое представление 
+        объекта для удобного отображения."""
+        
+        return f"Student(name={self.name}, age={self.age}, grades={self.grades})"
+
+
+class Group:
+    """Группа"""
+
+    def __init__(self, title: str, students: list = None) -> None:
+        """Инициализация"""
+
+        self.title = title               
+        self.students = students or []   
+
+    def add_student(self, student: Student) -> None:
+        """Добавляет студента в группу."""
+
+        self.students.append(student)
+
+    def __repr__(self) -> str:
+        """Возвращает строковое представление объекта
+         для удобного отображения."""
+
+        return f"Group(title={self.title}, students={self.students})"
